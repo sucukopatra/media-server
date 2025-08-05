@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[+] Creating directory structure..."
+echo "Creating directory structure"
 
 # Config directories
 mkdir -p /data/config/{jellyfin,jellyseer,radarr,sonarr,prowlarr,qbittorrent,nzbget}
@@ -11,15 +11,13 @@ mkdir -p /data/media/{movies,shows}
 # Downloads directories (shared for both clients)
 mkdir -p /data/downloads/{torrents,nzb}
 
-echo "[+] Setting permissions..."
+echo "Setting permissions"
 
 # Set ownership and permissions
 chown -R 1000:1000 /data
 chmod -R 775 /data
 
-echo "[+] Starting Docker containers..."
+echo "Starting Docker containers"
 
 docker compose up -d
-
-echo "[✓] All done. Media server should be firing up."
 
